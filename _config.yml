@@ -9,7 +9,7 @@ og_image: "/assets/img/og-card.svg"
 # Build
 markdown: kramdown
 theme: null
-plugins: []
+plugins: [jekyll-feed]
 
 # Keep build simple and fast
 exclude:
