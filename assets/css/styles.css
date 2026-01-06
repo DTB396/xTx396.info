@@ -363,14 +363,107 @@ code {
   padding: 4px 0;
 }
 
-.nav a.is-active {
-  color: var(--text);
-  text-decoration: none;
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-  background: color-mix(in srgb, var(--panel) 70%, transparent);
-}
-
 .nav a[href="#site-footer"] {
   border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
 }
 
+/* About page */
+.page { max-width: 820px; margin: 0 auto; padding: 32px 16px; }
+.page__head { margin-bottom: 18px; }
+.page__title { font-size: clamp(1.9rem, 2.5vw, 2.35rem); margin: 0 0 6px; }
+.page__blurb { margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+.panel--glow {
+  background: linear-gradient(120deg, rgba(122,162,255,.08) 0%, rgba(124,255,199,.08) 100%), var(--panel);
+  box-shadow: 0 10px 36px rgba(0,0,0,.35);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.lead { font-size: 1.05rem; line-height: 1.65; margin: 0 0 14px; }
+
+.badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 8px; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+}
+
+.list { margin: 10px 0 18px; padding-left: 18px; line-height: 1.7; }
+.list li { margin: 6px 0; }
+
+.contact-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  text-decoration: none;
+}
+.contact-card:hover { transform: translateY(-1px); background: rgba(255,255,255,.05); }
+.contact-card__label { color: var(--muted); font-weight: 600; }
+.contact-card__value { font-weight: 800; }
+
+.contact-icons { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+
+/* ------------------------------------------------------------
+   Contrast hardening (Homepage hero + panels)
+   Fixes "invisible until highlighted" text.
+------------------------------------------------------------ */
+
+/* If any legacy/inline styles set light text, force readable defaults */
+.hero,
+.hero p,
+.hero li,
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero strong,
+.hero em,
+.hero small,
+.hero span {
+  color: var(--text);
+}
+
+.hero__subtitle,
+.hero__location,
+.hero .muted {
+  color: var(--muted) !important;
+}
+
+/* Make sure link text stays readable in hero */
+.hero a { color: var(--text); }
+.hero a:hover { color: var(--text); }
+
+/* Buttons: ensure text is visible in light mode too */
+.btn { color: var(--text); }
+.btn--ghost { color: var(--text); }
+
+/* Pills/tags/badges should never inherit "muted" incorrectly */
+.pill, .tag, .badge { color: var(--text); }
+
+/* Right-side hero panel (Why Invest Here?) readability */
+.hero__panel,
+.hero__panel * {
+  color: var(--text);
+}
+.hero__panelTitle { color: var(--text); }
+.hero__panelNote { color: var(--muted); }
+
+/* Optional: soften pure-white panels in light mode for better contrast */
+@media (prefers-color-scheme: light) {
+  .hero__panel,
+  .panel,
+  .card {
+    background: linear-gradient(180deg, rgba(2,6,23,0.03), rgba(2,6,23,0.01)), var(--panel);
+  }
+}
