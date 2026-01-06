@@ -345,6 +345,8 @@ code {
   outline-offset: 2px;
 }
 
+.iconbtn svg { display: block; }
+
 .iconbtn svg {
   width: 20px;
   height: 20px;
