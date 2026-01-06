@@ -1,26 +1,56 @@
+# Core identity (used across hero, footer, metadata)
 name: "Devon Tyler"
 handle: "DTB396"
-descriptor: "Builder • Systems-minded operator • Product + field execution"
+descriptor: "Builder • systems-minded operator • product + field execution"
 location: "Galloway Township, Atlantic County, New Jersey, USA"
 
-# Do not fabricate usernames. Leave blank until you add them.
+# Short bio text (useful for meta tags and “link in bio” context)
+bio:
+  short: "Builder and systems-minded operator shipping practical tools and documenting real work."
+  long: "Builder and systems-minded operator focused on durable systems, ethical growth, and real-world execution."
+
+# Contact & social
+# Keep email blank until you choose what to publish.
 social:
   github: "https://github.com/DTB396"
+  linkedin: "https://www.linkedin.com/in/devon-tyler-barber-392319292/"
+  x: "https://x.com/dtb396"
+  instagram: "https://www.instagram.com/xdtb396/"
+  youtube: "https://www.youtube.com/@dTb396"
+  snapchat: "https://snapchat.com/t/nLT1gRcy"
   email: ""
-  linkedin: ""
-  x: ""
-  youtube: ""
-  instagram: ""
   website: ""
 
-# Investor-friendly section (edit anytime)
+# Canonical “bio link” + related sites (renders nicely if you choose to loop websites)
+websites:
+  - label: "DTB396 Public Hub"
+    url: "https://dtb396.github.io/dTb396/"
+    primary: true
+  - label: "Faith Frontier"
+    url: "https://faithfrontier.org/"
+    primary: false
+
+# Investor / collaborator context (Home → Now / Next / Looking For)
 now_next_looking:
   now:
     - "Shipping practical tools and field-ready systems."
     - "Maintaining and iterating on active public projects."
+    - "Documenting processes with an emphasis on clarity and durability."
+
   next:
-    - "[Placeholder] A focused build in automation / operations."
-    - "[Placeholder] Additional public demos and documentation."
+    - "Publishing additional public demos and supporting documentation."
+    - "Refining automation and operational workflows for repeatable use."
+
   looking_for:
-    - "[Placeholder] Strategic introductions and aligned collaborators."
-    - "[Placeholder] Early user feedback on tools-in-development."
+    - "Values-aligned collaborators interested in long-term, ethical growth."
+    - "Constructive feedback from early users of tools in development."
+
+# Optional: light boundaries to reduce spam/noise (safe to publish)
+presence:
+  open_to:
+    - "Collaboration"
+    - "Product feedback"
+    - "Long-term partnerships"
+  not_open_to:
+    - "Hype-driven claims"
+    - "Aggressive cold sales"
