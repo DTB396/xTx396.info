@@ -1,18 +1,31 @@
+# _config.yml — Devon Tyler / XTX396 Public Hub
+
 title: "Devon Tyler — Public Hub"
 description: "A calm, professional portfolio hub for active projects, works, tools, and ideas."
-url: "https://dtb396.github.io"
-baseurl: "/dTb396"
 
-# Social image (used by SEO tags / OG cards if you wire them in)
+# Custom root domain
+url: "https://xtx396.info"
+baseurl: ""   # MUST be empty for custom domains
+
+# Localization / metadata
+lang: "en"
+timezone: "America/New_York"
+
+# Social / SEO
 og_image: "/assets/img/og-card.svg"
 
+# Build
 markdown: kramdown
+permalink: pretty
 theme: null
 
+# GitHub Pages–supported plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
+# Clean build output
 exclude:
   - README.md
   - LICENSE
@@ -22,12 +35,18 @@ exclude:
   - vendor/
   - node_modules/
   - reports/
+  - scripts/
+  - tools/
   - .jekyll-cache/
   - .jekyll-metadata
   - .sass-cache/
   - Gemfile
   - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - yarn.lock
 
+# Default layout
 defaults:
   - scope:
       path: ""
