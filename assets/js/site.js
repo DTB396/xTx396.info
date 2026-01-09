@@ -71,3 +71,20 @@
     });
   }
 })();
+window.addEventListener("scroll", () => {
+  const socialShare = document.querySelector(".social-share");
+  if (window.scrollY > 500) {
+    socialShare.classList.add("show");
+  } else {
+    socialShare.classList.remove("show");
+  }
+});
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(section => {
+    if (section.getBoundingClientRect().top < window.innerHeight) {
+      section.classList.add('visible');
+    }
+  });
+});
