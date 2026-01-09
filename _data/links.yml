@@ -16,7 +16,7 @@
 pinned:
   - title: "Tillerstead LLC"
     url: "https://tillerstead.com/"
-    description: "Construction services with emphasis on compliant tile work, remodel support, and property maintenance."
+    description: "Construction services with emphasis on compliant tile assemblies, remodel support, and general property maintenance."
     detail: "Public hub for field work: tile/stone installations, repair/refresh scopes, small builds, and recurring maintenance. Content expands as services and portfolio items are published."
     tags: ["Business", "Construction", "Tile", "Maintenance"]
     status: active
@@ -35,44 +35,5 @@ pinned:
     description: "Public preview site for Barber Cam UI/UX experiments and demos."
     detail: "Lightweight preview environment for visuals and workflows. Public content only; excludes private repository material and sensitive data."
     tags: ["Tools", "Demo", "UI/UX"]
-    status: active
+    status: in_development
     featured: true
-
-sections:
-  - id: "business"
-    title: "Business"
-    blurb: "Operational work, service delivery, and commercial-facing systems."
-    items:
-      - title: "Tillerstead — Main Site"
-        url: "https://tillerstead.com/"
-        description: "Services, scope guidance, and portfolio publishing (as available)."
-        detail: "Focus: compliant installs, durable finishes, and clear expectations. Over time, this may include process notes, photo sets, and job-type explainers (without client-sensitive details)."
-        tags: ["Website", "Services", "Portfolio"]
-        status: active
-
-      - title: "Tillerstead — Build Phase Documents"
-        url: "https://tillerstead.com/build/"
-        description: "Plain-language patterns for estimates, scopes, and change control."
-        detail: "Goal: keep paperwork simple and auditable—what’s included, what’s excluded, and how changes are handled."
-        tags: ["Process", "Documentation"]
-        status: in_development
-        notes: "May be consolidated under the main site until fully published."
-
-  - id: "mission"
-    title: "Mission"
-    blurb: "Values-aligned initiatives and public-interest documentation."
-    items:
-      - title: "Faith Frontier — Governance + Records"
-        url: "https://faithfrontier.org/"
-        description: "Governance framework and publishing standards for stewardship and accountability."
-        detail: "Bias toward primary sources and clear labeling of dates, scope, and intent. Separates mission statements from operational claims."
-        tags: ["Governance", "Ethics", "Publishing"]
-        status: active
-
-      - title: "Faith Frontier — Case Record Pages"
-        url: "https://faithfrontier.org/cases/"
-        description: "Structured case pages with attachments when appropriate for public release."
-        detail: "Publish filings and exhibits only when intended for public access. Emphasis on navigation, consistent naming, and clear disclaimers."
-        tags: ["Public Record", "Documentation"]
-        status: in_development
-        notes: "Publish only what you can legally and ethically publish."
