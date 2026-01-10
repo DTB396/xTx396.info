@@ -7,15 +7,6 @@
 <body class="{{ page.body_class | default: '' }}">
   <a class="skip" href="#main">Skip to content</a>
 
-
-  <!-- Loader visually hidden by default, can be toggled with JS if needed -->
-  <div class="page-loader" aria-hidden="true" hidden>
-    <div>
-      <div class="page-loader__bar"><span></span></div>
-      <div class="page-loader__text">Loading</div>
-    </div>
-  </div>
-
   {% include header.html %}
 
   <main id="main" class="main" tabindex="-1">
@@ -24,7 +15,6 @@
 
   {% include footer.html %}
 
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.3/Sortable.min.js" defer></script>
-  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
 </body>
 </html>
