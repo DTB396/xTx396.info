@@ -87,3 +87,28 @@ Unless explicitly stated otherwise, **no license is granted** for reuse, redistr
 - Actively maintained
 - Grounded in real-world practice
 - Built to evolve responsibly
+
+---
+
+## **How to run locally**
+
+1. Install Ruby and Bundler.
+2. Install dependencies:
+
+   ```bash
+   bundle install
+   ```
+
+3. Run the site locally:
+
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+4. Visit `http://localhost:4000`.
+
+## **How to deploy on GitHub Pages**
+
+1. Push to the default branch.
+2. Ensure GitHub Pages is configured to build from the root directory.
+3. GitHub will run the Jekyll build automatically.
