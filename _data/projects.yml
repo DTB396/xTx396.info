@@ -1,0 +1,14 @@
+# Canonical project registry for xTx396.info
+# Each project must have a unique id, name, url, and summary.
+- id: xtx396
+  name: "xTx396.info Hub"
+  url: "/"
+  summary: "Main portfolio hub for Devon Tyler."
+  priority: 1
+  featured: true
+- id: open-source
+  name: "Open Source Contributions"
+  url: "https://github.com/DTB396"
+  summary: "Various open source projects and contributions on GitHub."
+  priority: 2
+  featured: false

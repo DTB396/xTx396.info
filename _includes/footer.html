@@ -6,17 +6,6 @@
       <section class="footer__col" aria-labelledby="footer-contact">
         <h2 class="footer__title" id="footer-contact">Contact</h2>
         <div class="footer__icons">{% include social-icons.html %}</div>
-        {% assign s = site.data.profile.social %}
-        <nav aria-label="Social links">
-          <ul class="footer__list" role="list">
-            {% if s.github %}<li><a href="{{ s.github }}">GitHub</a></li>{% endif %}
-            {% if s.email %}<li><a href="mailto:{{ s.email | escape }}">Email</a></li>{% endif %}
-            {% if s.linkedin %}<li><a href="{{ s.linkedin }}">LinkedIn</a></li>{% endif %}
-            {% if s.x %}<li><a href="{{ s.x }}">X</a></li>{% endif %}
-            {% if s.youtube %}<li><a href="{{ s.youtube }}">YouTube</a></li>{% endif %}
-            {% if s.instagram %}<li><a href="{{ s.instagram }}">Instagram</a></li>{% endif %}
-          </ul>
-        </nav>
         <h3 class="footer__title footer__title--spaced">Pages</h3>
         <nav aria-label="Footer pages">
           <ul class="footer__list" role="list">

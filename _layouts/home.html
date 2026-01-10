@@ -3,69 +3,34 @@ layout: default
 ---
 
 {% assign profile = site.data.profile %}
-{% assign links = site.data.links %}
+{% assign projects = site.data.projects | sort: "priority" %}
 
 <section class="hero hero--clean" aria-label="Hero">
   <div class="container">
     <div class="hero__grid">
-      <!-- Left -->
       <div class="hero__copy">
-        <h1 class="hero__title">
-          {{ profile.name | default: site.title | default: "Portfolio" }}
-        </h1>
-
-        {% if profile.descriptor %}
-          <p class="hero__subtitle">{{ profile.descriptor }}</p>
+        <h1 class="hero__title">{{ profile.name | default: site.title | default: "Portfolio" }}</h1>
+        {% if profile.identity.headline %}
+          <p class="hero__subtitle">{{ profile.identity.headline }}</p>
         {% endif %}
-
         {% if profile.location %}
           <p class="hero__location"><strong>{{ profile.location }}</strong></p>
         {% endif %}
-
-        <div class="hero__badgeRow" aria-label="Roles">
-          <span class="hero__badge">Builder</span>
-          <span class="hero__badge">Operator</span>
-          <span class="hero__badge">Investor-Ready</span>
-        </div>
-
         <div class="hero__cta">
           <a class="btn" href="#pinned">Explore Projects</a>
           <a class="btn btn--ghost" href="#now-next">Now / Next</a>
         </div>
-
-        <p class="hero__note muted">American-made grit, innovation, and purpose-led execution.</p>
-
-        <div class="hero__social" aria-label="Social links">
-          {% include social-icons.html %}
-        </div>
+        <div class="hero__social" aria-label="Social links">{% include social-icons.html %}</div>
       </div>
-
-      <!-- Right panel -->
       <aside class="hero__panel hero__panel--retro" aria-label="Credibility & Highlights">
         <div class="hero__panelTitle">Why Partner Here?</div>
-
         <ul class="hero__panelList" role="list">
-          <li>
-            <span class="muted">American Values</span>
-            <span>Integrity, accountability, and service-first delivery</span>
-          </li>
-          <li>
-            <span class="muted">Innovation</span>
-            <span>Lean systems, automation, and practical execution</span>
-          </li>
-          <li>
-            <span class="muted">Transparency</span>
-            <span>Clear milestones, public updates, and documented decisions</span>
-          </li>
-          <li>
-            <span class="muted">Purpose</span>
-            <span>Mission-led work with measurable outcomes</span>
-          </li>
+          <li><span class="muted">American Values</span><span>Integrity, accountability, and service-first delivery</span></li>
+          <li><span class="muted">Innovation</span><span>Lean systems, automation, and practical execution</span></li>
+          <li><span class="muted">Transparency</span><span>Clear milestones, public updates, and documented decisions</span></li>
+          <li><span class="muted">Purpose</span><span>Mission-led work with measurable outcomes</span></li>
         </ul>
-
-        <p class="hero__panelNote muted">
-          <strong>Ready to build?</strong> Explore projects or connect for an investor-ready brief.
-        </p>
+        <p class="hero__panelNote muted"><strong>Ready to build?</strong> Explore projects or connect for an investor-ready brief.</p>
       </aside>
     </div>
   </div>
@@ -76,21 +41,24 @@ layout: default
     <h2 class="section__title">Featured Work</h2>
     <p class="section__blurb">Public-facing work with active delivery and documentation.</p>
   </div>
-
-  {% if links.pinned.size > 0 %}
-      <div class="grid{% if links.pinned.size == 4 %} grid--pinned-4{% endif %}">
-      {% for item in links.pinned %}
-        {% include link-card.html item=item %}
-      {% endfor %}
-    </div>
-  {% endif %}
+  <ul class="project-list">
+    {% for project in projects %}
+      {% if project.featured %}
+      <li class="project-card">
+        <div class="project-card-title">
+          <a href="{{ project.url | relative_url }}">{{ project.name }}</a>
+        </div>
+        <div class="project-card-summary">{{ project.summary }}</div>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </section>
 
 <section class="container" id="now-next">
   <div class="section__head">
     <h2 class="section__title">Now / Next / Looking For</h2>
   </div>
-
   <div class="nnl">
     {% if profile.now_next_looking.now %}
       <div class="panel">
@@ -100,7 +68,6 @@ layout: default
         </ul>
       </div>
     {% endif %}
-
     {% if profile.now_next_looking.next %}
       <div class="panel">
         <h3>Next</h3>
@@ -109,7 +76,6 @@ layout: default
         </ul>
       </div>
     {% endif %}
-
     {% if profile.now_next_looking.looking_for %}
       <div class="panel">
         <h3>Looking For</h3>
@@ -121,56 +87,6 @@ layout: default
   </div>
 </section>
 
-<section class="container" id="links">
-  <div class="section__head">
-    <h2 class="section__title">Professional Links</h2>
-    <p class="section__blurb">Business, investor, and professional resources in one hub.</p>
-  </div>
 
-  <div class="link-grid">
-    {% for section in links.sections %}
-      <div class="link-group">
-        <h3>{{ section.title }}</h3>
-        <p class="muted">{{ section.blurb }}</p>
-        <div class="link-group__grid">
-          {% for link in section.links %}
-            <a class="link-card" href="{{ link.url }}">
-              <strong>{{ link.label }}</strong>
-              <p class="muted">{{ link.description }}</p>
-            </a>
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</section>
 
-<section class="container" id="notes">
-  <div class="section__head">
-    <h2 class="section__title">Terms</h2>
-    <p class="section__blurb">Project rules and expectations.</p>
-  </div>
-  <div class="social-share">
-    <span>Share your ambition—"Building by day, dreaming by night!"</span>
-  </div>
 
-  <div class="panel">
-    <ul>
-      <li><strong>Separation by design:</strong> This hub presents distinct categories (Business / Mission / Tools / Ideas) without blending claims across domains.</li>
-      <li><strong>Privacy-forward:</strong> No tracking pixels, no ad tech, and no publication of private repositories or evidence assets.</li>
-      <li><strong>Calm civics language:</strong> This site avoids inflammatory framing and sticks to factual descriptions.</li>
-    </ul>
-  </div>
-
-  <div class="dream-message" id="dreamMessage" style="display:none;">
-    <p>Your ambition is limitless—build by day, dream by night. Let's make it happen!</p>
-  </div>
-
-  <button class="unlock-button" onclick="revealDreamMessage()">Unlock Your Dream</button>
-
-  <script>
-    function revealDreamMessage() {
-      document.getElementById("dreamMessage").style.display = "block";
-    }
-  </script>
-</section>

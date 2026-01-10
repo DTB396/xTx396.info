@@ -38,10 +38,4 @@ pinned:
     status: in_development
     featured: true
 
-links:
-  - title: "GitHub"
-    url: "https://github.com/DTB396"
-  - title: "Website"
-    url: "https://xtx396.info"
-  - title: "Email"
-    url: "mailto:contact@xtx396.info"
+// File removed: unused data
