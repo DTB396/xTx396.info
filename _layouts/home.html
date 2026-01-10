@@ -78,7 +78,7 @@ layout: default
   </div>
 
   {% if links.pinned.size > 0 %}
-    <div class="grid {% if links.pinned.size == 4 %}grid--pinned-4{% endif %}">
+    <div class="grid {% raw %}{% if links.pinned.size == 4 %}grid--pinned-4{% endif %}{% endraw %}">
       {% for item in links.pinned %}
         {% include link-card.html item=item %}
       {% endfor %}
